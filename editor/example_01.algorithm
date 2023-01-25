@@ -1,0 +1,35 @@
+algorithm me
+(* autor: jas@bloadcas.com
+   date: 2023-01-25
+   description: Perform the treatment of the N values.
+*)
+
+    const
+        N : integer = 100;  (* we can choose other values *)
+    endconst
+
+    var 
+        a: integer;
+        b: boolean;
+        c: real;
+    endvar
+    { P: }
+        { initialization }
+        c := 1.23;
+        a := 1;
+        b := true;
+        { perform the track of the elements to treat them }
+        while a < N do
+            treatment(a);
+            { increment the track variable }
+            a := a + 1;
+        endwhile
+    { Q: FORALLx : 1 <= x <= N: (treatment(a) ) }
+
+    function treatment(a: integer): boolean
+    { P: }
+        return a == 12;
+    { Q: a = 12 };
+    endfunction
+    
+endalgorithm 

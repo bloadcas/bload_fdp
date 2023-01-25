@@ -1,0 +1,54 @@
+algorithm minimum
+(* author:
+   description: 
+*)   
+    
+const
+    MAX_AVAILABILITY: integer = 100;
+endconst
+
+type
+    tAvailability = record
+        person : tPerson;
+        start : tDate;
+        end : tDate;
+    endrecord
+    tAvailabilityData = record
+        elems : vector [MAX_AVAILABILITY] of tAvailability;
+        count : integer;
+    endrecord
+endtype
+
+function checkHasAvailability (availabilities: tAvailabilityData, document: string) : boolean
+var
+    left, right, middle : integer;
+    found : boolean;
+endvar
+
+    { Initialize variables }
+    left := 1;
+    right := availabilities.count;
+    found := false;
+    { Loop using binary search }
+    while (left ≤ right) and not found do
+        middle := (left + right) div 2;
+        if availabilities.elems[middle].person.document = document then
+            found := true;
+        else
+            if availabilities.elems[middle].person.document < document then
+                left := middle + 1;
+            else
+                right := middle -1;
+            endif
+        endif
+    endwhile
+    
+    for left := 1 to right  do 
+        middle := readInteger();
+        writeInteger(middle);
+    endfor
+    
+    return found;
+endfunction
+
+endalgorithm
