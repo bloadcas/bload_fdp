@@ -24,11 +24,11 @@
             <Keywords name="Folders in comment, open"></Keywords>
             <Keywords name="Folders in comment, middle"></Keywords>
             <Keywords name="Folders in comment, close"></Keywords>
-            <Keywords name="Keywords1">if while them do := else then&#x000D;&#x000A;endif endwhile&#x000D;&#x000A;for to downto endfor&#x000D;&#x000A;return &#x000D;&#x000A;in inout out</Keywords>
-            <Keywords name="Keywords2">record type var&#x000D;&#x000A;endvar endtype endrecord&#x000D;&#x000A;const endconst</Keywords>
-            <Keywords name="Keywords3">not and or&#x000D;&#x000A;div mod&#x000D;&#x000A;&lt; = &gt; &gt;= &lt;= + - * /</Keywords>
-            <Keywords name="Keywords4">action function algorithm&#x000D;&#x000A;endaction endfunction endalgorithm</Keywords>
-            <Keywords name="Keywords5">vector of integer real boolean bool &#x000D;&#x000A;string&#x000D;&#x000A;readInteger readReal readBoolean readString&#x000D;&#x000A;writeInteger writeReal writeBoolean writeString&#x000D;&#x000A;realToInteger integerToReal&#x000D;&#x000A;caracterToCode codeToCharacter</Keywords>
+            <Keywords name="Keywords1">if while them do := else then endif endwhile for to downto endfor return  in inout out</Keywords>
+            <Keywords name="Keywords2">record type var endvar endtype endrecord const endconst</Keywords>
+            <Keywords name="Keywords3">not and or div mod &lt; = &gt; &gt;= &lt;= + - * /</Keywords>
+            <Keywords name="Keywords4">action function algorithm endaction endfunction endalgorithm</Keywords>
+            <Keywords name="Keywords5">vector of integer real boolean bool  string readInteger readReal readBoolean readString writeInteger writeReal writeBoolean writeString realToInteger integerToReal caracterToCode codeToCharacter</Keywords>
             <Keywords name="Keywords6">true false</Keywords>
             <Keywords name="Keywords7"></Keywords>
             <Keywords name="Keywords8"></Keywords>

@@ -52,3 +52,73 @@ endvar
 endfunction
 
 endalgorithm
+
+
+
+
+algorithm sumNElements
+(* author: joagso@bloadcas.com
+   date: 2023-01-26
+   description: Sum N elements which are in a range [0..N]
+*)
+
+type
+endtype
+
+var
+    i, N, total: integer;
+endvar
+
+    i := 0;
+    N := readInteger();
+    total := 0;
+    while( i <= N ) do
+        total := total + i;
+        i := i + 1;
+    endwhile
+    writeInteger(total);
+    
+    
+    N := readInteger();
+    total := 0;
+    for i := 0; to N do
+        total := total + i;
+    endfor
+    writeInteger(total);
+    
+endalgorithm;
+
+
+
+algorithm factorial
+(* author: joagso@bloadcas.com
+   date: 2023-01-26
+   description: Calculate the factorial of x by iteration.
+*)
+
+type
+endtype
+
+var
+    i, N, total: integer;
+endvar
+
+    i := 1;
+    N := readInteger();
+    total := 1;
+    while( i <= N ) do
+        total := total * i;
+        i := i + 1;
+    endwhile
+    writeInteger(total);
+    
+    
+    N := readInteger();
+    total := 1;
+    for i := 1 to N do
+        total := total * i;
+    endfor
+    writeInteger(total);
+    
+endalgorithm;
+
