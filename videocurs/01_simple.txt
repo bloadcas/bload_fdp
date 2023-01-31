@@ -1,0 +1,27 @@
+GUIÓ DEL INITIATION TO PROGRAMMING
+
+01. SIMPLE
+
+1.- INTRODUCCIÓ
+    Transpa:    SIMPLE
+                * DATA TYPES
+                * VARIABLES: declaration, assign & use 
+                * INOUT (IO)
+    
+    Benvinguts, en aquest tutorial explicarem els tipus de dades més bàsics que són acceptats en algorísmica.
+    Com es declaren, com s'assignen i com s'usen les variables que contindran les dades les quals corresponen a algun dels tipus anteriors.
+    Finalment, veurem com un algorisme pot demanar una cada d'entrada i com pot emetre els càlculs per pantalla.
+    
+2.- DATATYPES
+    Transpa:    * NUMERICAL: integer, real
+                * LOGICAL: boolean
+                * CARACTERS: character (char), string
+                
+    Hi ha tres tipus de dades bàsiques en l'algorísmica: els numerìcs, els lògics i els caràcters.
+    
+    Transpa:    * NUMERICAL: integer, real
+                    Operations:  (-)        sign change
+                                 + -        adding substract
+                                 * div %    multiplicatio and division and remaining.
+                    Examples: -14, -4, 0, 3, 5, 7, ....
+                    
