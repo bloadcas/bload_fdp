@@ -19,9 +19,106 @@ GUIÓ DEL INITIATION TO PROGRAMMING
                 
     Hi ha tres tipus de dades bàsiques en l'algorísmica: els numerìcs, els lògics i els caràcters.
     
-    Transpa:    * NUMERICAL: integer, real
+    Transpa:    * NUMERICAL: integer
+                    Possible values:    -n ... 0 ... +n
                     Operations:  (-)        sign change
                                  + -        adding substract
-                                 * div %    multiplicatio and division and remaining.
+                                 * div mod
+                    Comparacions:   =, !=, <, <=, >, >=
                     Examples: -14, -4, 0, 3, 5, 7, ....
                     
+                    Invalid operations:   a / b    like b as 0 ... It throws and error!!
+                    
+                    
+    En el cas dels numèrics, hi trobarem els enters els quals engloben els negatius, els naturals i el zero.
+    
+    Les operacions que poden el canvi de signe, les operacions de suma, resta, multiplicació i divisió entera.
+    
+    Si necessiteu refrescar els termes matemàtics aplicats a la informàtica, teniu disponible un video introductori
+    on s'hi expliquen aquests termes.
+    
+    El que s'ha de tenir ben en compte és que una divisió necessita d'un numerador que és dividit per un denominador,
+    però sempre el demonimador ha de ser diferent de zero. La divisió per zero no existeix! (i obviament no és infinit el qual ni és un nombre).
+    
+    Transpa:    * NUMERICAL: real
+                    Possible values:    R  tq   mantisa · 10^e
+                    Operations:  (-)        sign change
+                                 + -        adding substract
+                                 * / %
+                    Comparacions:   =, !=, <, <=, >, >=
+                    Examples: -3.1416, -14, -4, -0.2222, 0, 0.0111, 3, 2.06, 5, 7, ....
+                                        
+                    Invalid operations:              a / b    like b as 0 ... It throws and error!!
+                    Be carefull with comparison:     a - b (0.09999966 - 0.01) is not zero but almost!
+                                                     |a-b| < epsilon.
+
+    En el cas dels reals, engloben tots els nombres que no siguin complexos i expressat en notació científica.
+    Això significa que hi haurà una part real i una precessió escrita com a   mantisa x 10^exp
+    
+    Les operacions que poden el canvi de signe, les operacions de suma, resta, multiplicació i divisió.
+    
+    L'únic que s'ha de tenir en compte és que tampoc es pot dividir per un valor 0 (però sí un d'aproximat)
+    I que si volem comparar amb dos reals haurem de vigilar perquè valors molt propers poden representar el mateix valor.
+    
+    En les llibreries matemàtiques dels llenguatges de programació generalment trobarem aquestes funcions externes:
+    
+        abs(x), sin(x), cos(x), tan(x), sqrt(x), exp(x), log(x), pow(x,y), ceil(x), floor(x)
+        max(x,y), min(x,y), round(x)
+
+
+    Transpa:    * LOGICAL: boolean (or bool)
+                    Possible values:    true , false
+                    Operations:  not x        negate
+                                 x and y      conjuntion
+                                 x or y       disjuntion
+                    Examples: 
+                        not true = false
+                        not false = true
+                        
+                        true and true = true        x and true = x
+                        
+                        false or true = true        x or true = true
+                        true or false = true
+                        true or true = true
+                        
+    En el cas de les dades lògiques podem expressar dos estats, el cert (true) o false (false) 
+    ... i pot treballar amb tres operacions bàsiques negada (not), la conjunció i (and) i la disjunció (or)
+    
+    Les taules de la veritat són les que mostrem a continuació i si us cal un repàs, teniu disponible un video introductori
+    on s'hi expliquen aquests termes.
+    
+    Només recordaré que la negada troba l'expressió contraria a la que s'avalua, si és cert, fals i si és fals, cert.
+    La conjunció només és certa quan els dos operands són certs, altrament tot és fals.
+    La disjunció, en canvi, es fa certa si un dels dos operands ho és. Altrament s'avalua com fals.
+    
+    La regla nemotècnica que us pot ajudar a dominar aquestes expressions són que un operador and ...
+    
+    
+    Transpa:    * CARACTERS: character (char), string
+                    Possible values:    ASCII o ANSI expressats amb l'apostrof simple:   <'>
+                    Operations:     
+                    Comparacions:   =, !=, <, <=, >, >=      (segons el codi associat)
+                                                             non-english letters, would be unordered alphabetical.
+                            1) nombres
+                            2) majúscules
+                            3) majúscules
+
+                    Casos importants: usarem les expressions usals en notació C.
+                        '\r','\n' -->      \r\n windows    \n linux    \r unix
+                        '\t'  tabulació
+                        '\0'  null
+                        '\\'  la barra invertida
+                        '(b)' l'espai bbarra
+
+    En el cas dels caràcter s'usa la codifiació ASCII en les que s'assigna un nombre a cada caràcter d'un alfabet internacional.
+    L'ordre establert és: primer els caràcters de control, després els nombres, seguit de les lletres majúscules i, finalment, les minúscules.
+    Compte amb els símbols llatins que no s'inclouen dins d'aquest alfabet. La ç i l'ñ es troben en posicions diferents fóra del rang.
+    
+                        
+    
+    
+                    
+                                        
+                    Invalid operations:              a / b    like b as 0 ... It throws and error!!
+                    Be carefull with comparison:     a - b (0.09999966 - 0.01) is not zero but almost!
+                                                     |a-b| < epsilon.

@@ -5,10 +5,10 @@ GUIÓ DEL INITIATION TO PROGRAMMING
 1.- PRESENTACIÓ
     Transpa:    Diagrama d'immersions simplificat
     
-    Benvinguts en aquest curs d'iniciació a la programación on aprendrem les bases teòriques de la programació de manera gradual.
-    De fet, el curs està dividit diferents immesions tal com es faria en el cas de voler aprendre a nedar.
-    Se n'ha pensat unes 6 immersions: simple, bàsica, procidamental, arrays, pointers i ADT (TADs). 
-    A més, un cop s'explica el contingut d'una base, ja es disposarà del coneixement per les complementaries o satèl·lit.
+    Benvinguts en aquest curs d'iniciació a la programació on aprendrem les bases teòriques de la programació de manera gradual.
+    De fet, el curs està dividit diferents immersions tal com es faria en el cas de voler aprendre a nedar.
+    Se n'ha pensat unes 6 immersions: simple, bàsica, procedimental, arrays, punters i ADT (TADs). 
+    A més, un cop s'explica el contingut d'una base, ja es disposarà del coneixement per les complementàries o satèl·lit.
     Però això ho explicarem més endavant.
     
 2.- DEFINITION
@@ -16,8 +16,8 @@ GUIÓ DEL INITIATION TO PROGRAMMING
                 BetterDef(Programming) := Programming is the art of telling a machine what to do and how to do it in its language.
                 
     Abans de començar amb tot el contingut cal saber què és programar. 
-    Una definició de diccionari seria una com aquesta: "procès o activitat en la qual s'escriuren programes pels ordinadors".
-    Aquest tipus de definició deixen a tothom sense una idea clara del què és programar.
+    Una definició de diccionari seria una com aquesta: "procés o activitat en la qual s'escriuen programes pels ordinadors".
+    Aquest tipus de definició deixen a tothom sense una idea clara de que és programar.
     Per això, prefereixo una de millor: és l'art de dir a una màquina el què ha de fer i com ho ha de fer en el seu llenguatge.
     És a dir, la nostra missió és explicar en un llenguatge concret quines accions s'han de dur a terme
     ... per tal que una màquina les entengui i les sàpiga fer.

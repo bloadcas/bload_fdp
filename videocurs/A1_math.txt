@@ -1,0 +1,72 @@
+MATHS VIDEOS
+
+* Logical & Sets.
+    https://www.embibe.com/exams/set-theoretic-approach/
+    https://occupymath.wordpress.com/2021/04/15/set-theory-contains-real-and-unreal-worlds/
+    
+        not, and, or, xor
+        UNIVx: x in Q: P(x)
+        EXISy: y in Q: P(y)
+
+* Sets applied in computer science
+    Naturals    N  + 0     integer 
+    Integers    Z+- + 0    integer
+    Rationals   Q          real 
+    Irrationals            real
+    Reals       R          real
+    
+    Complex     C / I      non-defined.
+
+    
+    Irrationals importants
+    https://mathworld.wolfram.com/NaturalNumber.html
+    https://es.wikipedia.org/wiki/N%C3%BAmero_irracional
+       * Pi, e, phi 
+    
+    
+* Difference between integer division y divison real.
+    a = b * q + r            a div b = q      
+                             a mod b = real   
+    12 = 5 * 2 + 2          12 div 5 = 10
+                            12 mod 5 = 2
+                            
+         0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15
+         0  0  0  0  0  1  1  1  1  1  2  2  2  2  2  2  <-- integer divison
+         0  1  2  3  4  0  1  2  3  4  0  1  2  3  4  5  <-- modular
+         
+    a / b in R
+         0   1   2   3   4    5    6    7    8    9   10   11   12   13   14   15
+         0 0.2 0.4 0.6 0.8  1.0  1.2  1.4  1.6  1.8  2.0  2.2  2.4  2.6  2.8  3.0  2  2  <-- real division
+    
+    
+
+* Division by zero ... infinity! no! non existencial.
+    https://mathworld.wolfram.com/DivisionbyZero.html
+
+* Funcions matemàtiques més comunes implementades:
+    abs(x)      sqrt(x)     sin(x)      round(x)
+    max(x,y)    exp(x)      cos(x)      ceil(x)
+    min(x,y)    pow(x,y)    tan(x)      floor(x)
+                log(x)
+                
+   Faltarien:      fib(x) = fib(x-1)+fib(x-2);   f(1) = f(2) = 1
+                   fact(x) = fact(x-1);          f(1) = 1;
+                   sum(x) = x + sum(x-1);        sum(0) = 0;
+
+    abs(x) = x   x >= 0         max(x,y) = x   x >= y
+             -x  x < 0                     y   y > x
+             
+    !! Taylor, series, mètode de newton.    
+             
+* Expressions exponencial - logarítmiques
+    e(x) 
+    log_b(x) = log(x) / log(b) ...
+    e^ln(x) = x
+    
+* Comparatives:
+    a > b   ==>  b < a, pero    -a < -b (inversa)
+    
+    0 <= b <= c   ==>    0 <= b && b <= c;
+    
+    
+    
