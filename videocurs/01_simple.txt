@@ -12,7 +12,55 @@ GUIÓ DEL INITIATION TO PROGRAMMING
     Com es declaren, com s'assignen i com s'usen les variables que contindran les dades les quals corresponen a algun dels tipus anteriors.
     Finalment, veurem com un algorisme pot demanar una cada d'entrada i com pot emetre els càlculs per pantalla.
     
-2.- DATATYPES
+2.- ESTRUCTURA BÀSICA D'UN ALGORISME.
+    
+    Transpa:        algorithm <NAME>
+                    (* author: <author>
+                       date: <yyyy-mm-dd>
+                       description: <brief description>
+                    *)
+                    types
+                        <types>         { type of data which are going to be used as a variables }
+                    endtypes
+                    
+                        var 
+                            <vars>      { variables to be used inside de code }
+                        endvars
+                    
+                        { comments }
+                        <code>
+                    
+                    endalgorithm
+    
+    Per començar el nostre algorisme s'expresa dins d'una estructura que ens facilitarà la seva expressió formal. 
+    També se solen representar com a procediments en format acció o funció. Però en aquest cas us mostrem el format complet.
+    
+    Dins del codi hi trobarem paraules clau (TOKENS) tals com algorithm, types, endalgorithm, etc. 
+    Aquestes paraules identifiquen parts del codi i son invariables.
+    Les altres parts ja son pròpies del nostre codi o comentaris que hi inserim dins per fer-lo més entenible.
+    Els comentaris en pseudocodi se solen representar entre claus del tipus brackets { }, 
+    ... però com a símbol nostàlgic, també es podrà posar entre els marcadors parèntesi-asterisc (* *).
+    
+3.- VARIABLES
+
+    Transpa:        var                                         var 
+                        name_var: type_of_data;                     count : integer;
+                    endvar                                      endvar
+                    
+                    name_var := literal;                        count := 1;
+                    name_var := name_var + literal;             count := count + 2;
+                    name_var := 2 * name_var;                   count := 2 * count;
+
+    Un cop ja sabem on posar cada element, mostrarem com establir una variable.
+    Una variable és una dada registrada en la memòria la qual podrà ser usada dins del nostre codi. 
+    Podrem assignar-li valors puntuals o literals tal com assignar a count el valor 1.
+    Per fer-ho caldrà usar l'operador ASSIGNACIÓ. És un operador molt usat i en pseudocodi s'usa la nomenclatura :=.
+    I en aquest cas, es diu que "s'assigna el valor 1 a la variable count". 
+    També podrem usar expressions com suma, resta, multiplicació, divisió, etc...
+
+    Vegem quins tipus de dades podem assignar a una variable per començar a escriure codi.
+    
+4.- DATATYPES
     Transpa:    * NUMERICAL: integer, real
                 * LOGICAL: boolean
                 * CARACTERS: character (char), string
@@ -28,17 +76,20 @@ GUIÓ DEL INITIATION TO PROGRAMMING
                     Examples: -14, -4, 0, 3, 5, 7, ....
                     
                     Invalid operations:   a / b    like b as 0 ... It throws and error!!
+                    Example:        var x : integer;  endvar
+                                    x := 1024;
+                                    x := x div 2.0;     { result x = 512 }
                     
                     
     En el cas dels numèrics, hi trobarem els enters els quals engloben els negatius, els naturals i el zero.
     
-    Les operacions que poden el canvi de signe, les operacions de suma, resta, multiplicació i divisió entera.
+    Les operacions que poden fer-se són el canvi de signe, les operacions de suma, resta, multiplicació i divisió entera.
     
     Si necessiteu refrescar els termes matemàtics aplicats a la informàtica, teniu disponible un video introductori
     on s'hi expliquen aquests termes.
     
-    El que s'ha de tenir ben en compte és que una divisió necessita d'un numerador que és dividit per un denominador,
-    però sempre el demonimador ha de ser diferent de zero. La divisió per zero no existeix! (i obviament no és infinit el qual ni és un nombre).
+    El que s'ha de tenir ben en compte és que en una divisió el demonimador mai ha de ser zero. 
+    La divisió per zero no existeix! (i obviament no és infinit el qual ni és un nombre). 
     
     Transpa:    * NUMERICAL: real
                     Possible values:    R  tq   mantisa · 10^e
@@ -51,11 +102,16 @@ GUIÓ DEL INITIATION TO PROGRAMMING
                     Invalid operations:              a / b    like b as 0 ... It throws and error!!
                     Be carefull with comparison:     a - b (0.09999966 - 0.01) is not zero but almost!
                                                      |a-b| < epsilon.
+                                                     
+                    Example:        var x : real;  endvar
+                                    x := 3.141516;
+                                    x := x * 2.0;       { result x = 6,283032 }
+
 
     En el cas dels reals, engloben tots els nombres que no siguin complexos i expressat en notació científica.
     Això significa que hi haurà una part real i una precessió escrita com a   mantisa x 10^exp
     
-    Les operacions que poden el canvi de signe, les operacions de suma, resta, multiplicació i divisió.
+    Les operacions que poden fer-se son el canvi de signe, les operacions de suma, resta, multiplicació i divisió.
     
     L'únic que s'ha de tenir en compte és que tampoc es pot dividir per un valor 0 (però sí un d'aproximat)
     I que si volem comparar amb dos reals haurem de vigilar perquè valors molt propers poden representar el mateix valor.
@@ -81,6 +137,11 @@ GUIÓ DEL INITIATION TO PROGRAMMING
                         true or false = true
                         true or true = true
                         
+                    Example:        var x : bool; y: bool;  endvar
+                                    y := true;
+                                    x := y and false;       { result x = false }
+
+                        
     En el cas de les dades lògiques podem expressar dos estats, el cert (true) o false (false) 
     ... i pot treballar amb tres operacions bàsiques negada (not), la conjunció i (and) i la disjunció (or)
     
@@ -94,14 +155,17 @@ GUIÓ DEL INITIATION TO PROGRAMMING
     La regla nemotècnica que us pot ajudar a dominar aquestes expressions són que un operador and ...
     
     
-    Transpa:    * CARACTERS: character (char), string
+    Transpa:    * CARACTERS: character 
                     Possible values:    ASCII o ANSI expressats amb l'apostrof simple:   <'>
-                    Operations:     
+                    Operations:         -
                     Comparacions:   =, !=, <, <=, >, >=      (segons el codi associat)
                                                              non-english letters, would be unordered alphabetical.
                             1) nombres
                             2) majúscules
-                            3) majúscules
+                            3) minúscules
+                            
+                    Example:        var x : char  endvar
+                                    x := 'h';
 
                     Casos importants: usarem les expressions usals en notació C.
                         '\r','\n' -->      \r\n windows    \n linux    \r unix
@@ -114,11 +178,122 @@ GUIÓ DEL INITIATION TO PROGRAMMING
     L'ordre establert és: primer els caràcters de control, després els nombres, seguit de les lletres majúscules i, finalment, les minúscules.
     Compte amb els símbols llatins que no s'inclouen dins d'aquest alfabet. La ç i l'ñ es troben en posicions diferents fóra del rang.
     
-                        
+    Transpa:    * CARACTERS: string
+                    Possible values:    cadenes ASCII o ANSI expressats amb l'apostrof doble: <"> i acabats en \0.
+                    Operations:     
+                    Comparacions:       =, !=, <, <=, >, >=      (segons el codi associat)
+                                                             non-english letters, would be unordered alphabetical.
+                            1) nombres
+                            2) majúscules
+                            3) minúscules
+                            
+                    Example:        var x : string  endvar
+                                    x := "hello world!";
+
+    Finalment, el cas de les cadenes o strings ens permetrà registrar paraules o frases dins de les variables. 
+    No té cap operació associada, però sí que es pot utilizar operadors de comparació per veure si dos strings son iguals o no.
+    Els literals van associats com entre cometes dobles:
+    
+5.- CONVERSIONS ENTRE DADES
+
+    Transpa:                integer         real                boolean             char                string 
+                integer     --------------  i:=realToInt(r)     i := kronecker(b);  i := charToInt(c)   xxxxxxxxxxxxxx
+                real        r:=intToReal(r) --------------      r := intToReal(kr(i)) r:=iTor(cToI(c))  xxxxxxxxxxxxxx
+                boolean     b:=i!=0;        b:=rToi(r)!=0;      --------------
+                char                                                                --------------
+                string                                                                                  --------------
+ 
+    Per poder passar d'un tipus a un altre, podem fer servir aquestes expressions. 
+    En alguns pseudocodis es permet la conversió "automàtica", entre operadors:  r: real;     r := 1.0 * i;
+                                                                                              r := 1.0 * intToReal(i);
+
+ 
+5.- ENTRADES I SORTIDES
+
+    Transpa:        var                    var                var                   var               var 
+                        x: integer;             x: real;          x: boolean;           x: char           x: string; 
+                    endvar                 endvar             endvar                endvar            endvar 
+                                                                                                      
+                    x := readInteger();    x := readReal();   x := readBoolean();   x := readChar();  x := readString();
+                    writeInteger(x);       writeReal(x);      writeBoolean(x);      writeChar(x);     writeString(x);
+    
+    Per poder entrar valors des del teclat usarem el procediment readInteger, readReal, readBoolean, readChar i readString.
+    En canvi, per poder escriure per pantalla haurem d'usar writeInteger, writeReal, writeBoolean, writeChar i writeString.
     
     
+6.- PRIMERS PROGRAMES:
+
+    * Calcula la teva edat: 
+        Transpa:    Get the number of your age from the actual year and your year of birth.
+        
+        Escriure:   algorithm currentAge
+                    (* author: lsic@bloadcas.com
+                       date: 2023-02-02
+                       description: Get your age from the difference between the input current year and the year of birth.
+                    *)
                     
-                                        
-                    Invalid operations:              a / b    like b as 0 ... It throws and error!!
-                    Be carefull with comparison:     a - b (0.09999966 - 0.01) is not zero but almost!
-                                                     |a-b| < epsilon.
+                    { This algorithm uses the simple data types and no need to declare its own }
+                    
+                        var 
+                            year_current : integer;
+                            year_birth : integer;
+                            age : integer;
+                        endvars
+                    
+                        { get the current and birthday from the input }
+                        year_current := readInteger();
+                        year_birth := readInteger();
+                        
+                        { the age is the difference between the two years }
+                        age := year_current - year_birth;
+                        
+                        { the age is written to the output }
+                        writeInteger(age);                  
+                        
+                    endalgorithm
+    
+    * Calcula la taula de multiplicació: 
+        Transpa:    Create the simple table of multiplication from a desired value.
+        
+        Escriure:   algorithm currentAge
+                    (* author: lsic@bloadcas.com
+                       date: 2023-02-02
+                       description:  Create the simple table of multiplication from a desired value.
+                    *)
+                   
+                        var 
+                            value : integer;
+                        endvars
+                    
+                        { get the value the input }
+                        value := readInteger();
+                        
+                        { write all the multiplications to the output }
+                        writeInteger( 1 * value );
+                        writeInteger( 2 * value );
+                        writeInteger( 3 * value );
+                        writeInteger( 4 * value );
+                        writeInteger( 5 * value );
+                        writeInteger( 6 * value );
+                        writeInteger( 7 * value );
+                        writeInteger( 8 * value );
+                        writeInteger( 9 * value );
+                        writeInteger( 10 * value );
+                        
+                    endalgorithm
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
