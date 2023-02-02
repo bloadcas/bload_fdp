@@ -41,7 +41,7 @@ GUIÓ DEL INITIATION TO PROGRAMMING
     Els comentaris en pseudocodi se solen representar entre claus del tipus brackets { }, 
     ... però com a símbol nostàlgic, també es podrà posar entre els marcadors parèntesi-asterisc (* *).
     
-3.- VARIABLES
+3.- VARIABLES I CONSTANTS
 
     Transpa:        var                                         var 
                         name_var: type_of_data;                     count : integer;
@@ -53,12 +53,18 @@ GUIÓ DEL INITIATION TO PROGRAMMING
 
     Un cop ja sabem on posar cada element, mostrarem com establir una variable.
     Una variable és una dada registrada en la memòria la qual podrà ser usada dins del nostre codi. 
-    Podrem assignar-li valors puntuals o literals tal com assignar a count el valor 1.
+    Podrem assignar-li valors puntuals o literals tal com assignar a count el valor 1 i poden variar en 
+    tot moment del programa.
     Per fer-ho caldrà usar l'operador ASSIGNACIÓ. És un operador molt usat i en pseudocodi s'usa la nomenclatura :=.
     I en aquest cas, es diu que "s'assigna el valor 1 a la variable count". 
     També podrem usar expressions com suma, resta, multiplicació, divisió, etc...
 
     Vegem quins tipus de dades podem assignar a una variable per començar a escriure codi.
+    
+    Transpa:        const                                       const
+                        <name>: <type> = <literal>;                 PI : real = 3.1415;
+                    endvar                                      endconst
+
     
 4.- DATATYPES
     Transpa:    * NUMERICAL: integer, real
@@ -224,12 +230,12 @@ GUIÓ DEL INITIATION TO PROGRAMMING
 6.- PRIMERS PROGRAMES:
 
     * Calcula la teva edat: 
-        Transpa:    Get the number of your age from the actual year and your year of birth.
+        Transpa:    Calculates the age of a person based on the current year and the date of birth
         
         Escriure:   algorithm currentAge
                     (* author: lsic@bloadcas.com
                        date: 2023-02-02
-                       description: Get your age from the difference between the input current year and the year of birth.
+                       description: Calculates the age of a person based on the current year and the date of birth
                     *)
                     
                     { This algorithm uses the simple data types and no need to declare its own }
@@ -238,7 +244,7 @@ GUIÓ DEL INITIATION TO PROGRAMMING
                             year_current : integer;
                             year_birth : integer;
                             age : integer;
-                        endvars
+                        endvar
                     
                         { get the current and birthday from the input }
                         year_current := readInteger();
@@ -247,8 +253,10 @@ GUIÓ DEL INITIATION TO PROGRAMMING
                         { the age is the difference between the two years }
                         age := year_current - year_birth;
                         
-                        { the age is written to the output }
-                        writeInteger(age);                  
+                        { Print the age }
+                        writeInteger(age);   
+
+                        { Q: The age between the two years has been printed }
                         
                     endalgorithm
     
@@ -263,7 +271,7 @@ GUIÓ DEL INITIATION TO PROGRAMMING
                    
                         var 
                             value : integer;
-                        endvars
+                        endvar
                     
                         { get the value the input }
                         value := readInteger();
@@ -280,8 +288,61 @@ GUIÓ DEL INITIATION TO PROGRAMMING
                         writeInteger( 9 * value );
                         writeInteger( 10 * value );
                         
+                        { Q: The table of multiplication for the value is printed }
+                        
                     endalgorithm
     
+    * Calcula la divisió entre dos nombres: 
+        Transpa:    Calculate the division of two numbers. 
+                    Assume they are non-zero positive numbers.
+        
+        Escriure:   algorithm divisionOf2Numbers
+                    (* author: lsic@bloadcas.com
+                       date: 2023-02-02
+                       description:  Calculate the division of two non-zero positive numbers. 
+                    *)
+                   
+                        var 
+                            x, y, division : real;
+                        endvar
+                    
+                        { get the value the input }
+                        x := readReal();
+                        y := readReal();
+                        
+                        { P: x > 0 ^ y > 0 }
+                        division := x / y;
+                        { Q: division = x / y ^ x > 0 ^ y > 0 ^ division > 0 }
+                        
+                        { Print the result }
+                        writeReal(division );
+                        
+                    endalgorithm
+    
+    * Calcula l'àrea d'una circumferència
+        Transpa:    Calculate the area of a circle of radius R: A = Pi * R^2
+        
+        Escriure:   algorithm currentAge
+                    (* author: lsic@bloadcas.com
+                       date: 2023-02-02
+                       description:  Calculate the area of a circle or radius R.
+                    *)
+                    const 
+                        PI : real = 3.14159265359;
+                    endconst
+                        var 
+                            radius, area : real;
+                        endvar
+                    
+                        { get the value the radius }
+                        radius := readReal();
+                        
+                        { Calculate the area with the found parameters}
+                        area := PI * radius * radius;
+                        writeReal(area);
+                        { Q: area = PI * radius * radius }
+                        
+                    endalgorithm
     
     
     
