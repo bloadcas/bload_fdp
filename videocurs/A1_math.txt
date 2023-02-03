@@ -8,6 +8,19 @@ MATHS VIDEOS
         UNIVx: x in Q: P(x)
         EXISy: y in Q: P(y)
 
+     a      not a       a       b       a and b   a or b    a xor b
+     false  true        false   false   false     false     false
+     true   false       false   true    false     true      true
+                        true    false   false     true      true
+                        true    true    true      true      false
+
+    
+    Let be hasBike a boolean variable which means if the user has a bike
+    Let be km an integer variable which means the distance runned by the user.
+    
+    Which boolean condition means "
+        ( hasBike and km > 20 ) or ( not hasBike and km > 2 )
+
 * Sets applied in computer science
     Naturals    N  + 0     integer 
     Integers    Z+- + 0    integer
