@@ -10,7 +10,7 @@ GUIÓ DEL INITIATION TO PROGRAMMING
     
     Benvinguts, en aquest tutorial explicarem els tipus de dades més bàsics que són acceptats en algorísmica.
     Com es declaren, com s'assignen i com s'usen les variables que contindran les dades les quals corresponen a algun dels tipus anteriors.
-    Finalment, veurem com un algorisme pot demanar una cada d'entrada i com pot emetre els càlculs per pantalla.
+    Finalment, veurem com un algorisme pot demanar dades per l'entrada, en el nostre cas pel teclat, i com pot emetre resultats per pantalla.
     
 2.- ESTRUCTURA BÀSICA D'UN ALGORISME.
     
@@ -29,17 +29,22 @@ GUIÓ DEL INITIATION TO PROGRAMMING
                     
                         { comments }
                         <code>
+                        
+                        /* C comments style */
                     
                     endalgorithm
     
     Per començar el nostre algorisme s'expresa dins d'una estructura que ens facilitarà la seva expressió formal. 
-    També se solen representar com a procediments en format acció o funció. Però en aquest cas us mostrem el format complet.
+    També se solen representar com a procediments en format acció o funció tal com ho veurem més endavant.
+    Però en aquest cas us mostrem el format complet d'un algorisme.
     
     Dins del codi hi trobarem paraules clau (TOKENS) tals com algorithm, types, endalgorithm, etc. 
     Aquestes paraules identifiquen parts del codi i son invariables.
     Les altres parts ja son pròpies del nostre codi o comentaris que hi inserim dins per fer-lo més entenible.
     Els comentaris en pseudocodi se solen representar entre claus del tipus brackets { }, 
-    ... però com a símbol nostàlgic, també es podrà posar entre els marcadors parèntesi-asterisc (* *).
+    ... però com a símbol nostàlgic, en aquest curs, també es podrà posar entre els marcadors parèntesi-asterisc (* *). al pur estil PASCAL o MODULA-2.
+
+    Ja per arrodonir-ho, també s'acceptarà la notació C.
     
 3.- VARIABLES I CONSTANTS
 
@@ -52,19 +57,27 @@ GUIÓ DEL INITIATION TO PROGRAMMING
                     name_var := 2 * name_var;                   count := 2 * count;
 
     Un cop ja sabem on posar cada element, mostrarem com establir una variable.
-    Una variable és una dada registrada en la memòria la qual podrà ser usada dins del nostre codi. 
-    Podrem assignar-li valors puntuals o literals tal com assignar a count el valor 1 i poden variar en 
-    tot moment del programa.
+    Segons el nostre model de computació, una variable és una dada registrada en la memòria la qual podrà ser usada dins del nostre codi. 
+    Podrem assignar-li valors fixos (o literals) tal com assignar a count el valor 1 i poden canviar en tot moment del programa.
     Per fer-ho caldrà usar l'operador ASSIGNACIÓ. És un operador molt usat i en pseudocodi s'usa la nomenclatura :=.
     I en aquest cas, es diu que "s'assigna el valor 1 a la variable count". 
     També podrem usar expressions com suma, resta, multiplicació, divisió, etc...
+    Per tant, també podem usar el valor que hi ha emmagatzemada en una altra variable i operar amb elles per acabar assignant el resultat a la variable que ens interessi.
+    Per exemple, "count se li assigna el valor que ja tenia incrementat en dues unitats" o "count se li assigna el doble del valor que ja tenia".
 
-    Vegem quins tipus de dades podem assignar a una variable per començar a escriure codi.
     
     Transpa:        const                                       const
                         <name>: <type> = <literal>;                 PI : real = 3.1415;
                     endvar                                      endconst
+                    
+    Anteriorment, hem dit que una variable se li pot assignar valors literals que són valors fixes o constants.
+    Però, si aquest literal és un valor fix conegut o que un cop establert no canviarà, podem declarar constants.
+    Les constants es consideren valors invariables durant l'execució de l'algorisme. Per exemple, el valor PI valdrà 3.1415 durant tot el programa i no variarà.
+    Si en el nostre algorisme necesitem indicar una valors màxims o mínims, podem usar una constant establint el valor màxim. 
+    Si en algun moment es determina que aquest valor ha de ser un altre, el podríem canviar, però mai per codi! En les constants, no es poden usar l'operador assignació.
+    
 
+    Vegem quins tipus de dades podem assignar a una variable per començar a escriure codi.
     
 4.- DATATYPES
     Transpa:    * NUMERICAL: integer, real
@@ -79,7 +92,7 @@ GUIÓ DEL INITIATION TO PROGRAMMING
                                  + -        adding substract
                                  * div mod
                     Comparacions:   =, !=, <, <=, >, >=
-                    Examples: -14, -4, 0, 3, 5, 7, ....
+                    Literals: -14, -4, 0, 3, 5, 7, ....
                     
                     Invalid operations:   a / b    like b as 0 ... It throws and error!!
                     Example:        var x : integer;  endvar
@@ -103,7 +116,7 @@ GUIÓ DEL INITIATION TO PROGRAMMING
                                  + -        adding substract
                                  * / %
                     Comparacions:   =, !=, <, <=, >, >=
-                    Examples: -3.1416, -14, -4, -0.2222, 0, 0.0111, 3, 2.06, 5, 7, ....
+                    Literals: -3.1416, -14, -4, -0.2222, 0, 0.0111, 3, 2.06, 5, 7, ....
                                         
                     Invalid operations:              a / b    like b as 0 ... It throws and error!!
                     Be carefull with comparison:     a - b (0.09999966 - 0.01) is not zero but almost!
@@ -129,7 +142,7 @@ GUIÓ DEL INITIATION TO PROGRAMMING
 
 
     Transpa:    * LOGICAL: boolean (or bool)
-                    Possible values:    true , false
+                    Possible values (Literals):    true , false
                     Operations:  not x        negate
                                  x and y      conjuntion
                                  x or y       disjuntion
@@ -320,27 +333,32 @@ GUIÓ DEL INITIATION TO PROGRAMMING
                     endalgorithm
     
     * Calcula l'àrea d'una circumferència
-        Transpa:    Calculate the area of a circle of radius R: A = Pi * R^2
+        Transpa:    Calculate the area of a pizza of radius z: A = Pi * z^2
+                    and the volume of the same pizza with hight a: V = A * a = Pi * z^2 * a
         
         Escriure:   algorithm currentAge
                     (* author: lsic@bloadcas.com
                        date: 2023-02-02
-                       description:  Calculate the area of a circle or radius R.
+                       description:  Calculate the area of a circle (pizza) or radius z and 
+                                     the volume of a cilindre with a height.
                     *)
                     const 
                         PI : real = 3.14159265359;
                     endconst
                         var 
-                            radius, area : real;
+                            a, z, area, volume : real;
                         endvar
                     
-                        { get the value the radius }
-                        radius := readReal();
+                        { get the value the radius and the hight }
+                        a := readReal();
+                        z := readReal();
                         
                         { Calculate the area with the found parameters}
-                        area := PI * radius * radius;
+                        area := PI * z * z;
                         writeReal(area);
-                        { Q: area = PI * radius * radius }
+                        volume := area * a;  (* the same as:  volume := Pi * z * z * a *)
+                        writeReal(volume);
+                        { Q: area = PI*z*z*a ^  volume = area * a = PI*z*z*a }
                         
                     endalgorithm
     

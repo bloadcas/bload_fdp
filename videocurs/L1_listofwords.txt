@@ -1,0 +1,29 @@
+. algorisme
+. programa
+. programar
+. requisits / requeriments
+. implementar
+. model computacional
+
+
+. variables
+. tipus de dades
+. enter, caràcter, booleà
+. asci, ansi
+. registre (record)
+. enumerat
+. consola (pantalla negra on s'emet sortides)
+
+. programació estructurada
+. condicional, condicio
+. iteratiu, repetitiu
+. recorregut
+. cerca
+. comptador
+
+. procediment
+. subrutina, rutina
+. acció, funció.
+. paràmetre
+. entrada, sortida, entrada i sortida
+. 
