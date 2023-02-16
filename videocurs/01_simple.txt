@@ -128,7 +128,7 @@ GUIÓ DEL INITIATION TO PROGRAMMING
 
 
     En el cas dels reals, engloben tots els nombres que no siguin complexos i expressat en notació científica.
-    Això significa que hi haurà una part real i una precessió escrita com a   mantisa x 10^exp
+    Això significa que hi haurà una part real i una precisió com a   mantisa x 10^exp
     
     Les operacions que poden fer-se son el canvi de signe, les operacions de suma, resta, multiplicació i divisió.
     
@@ -243,9 +243,10 @@ GUIÓ DEL INITIATION TO PROGRAMMING
 6.- PRIMERS PROGRAMES:
 
     * Calcula la teva edat: 
-        Transpa:    Calculates the age of a person based on the current year and the date of birth
+        Transpa:    Calculates the age of a person based on the current year and the date of birth.
+                    Assume that the year of birth are always less or equal than the current year.
         
-        Escriure:   algorithm currentAge
+        Escriure:   algorithm CurrentAge
                     (* author: lsic@bloadcas.com
                        date: 2023-02-02
                        description: Calculates the age of a person based on the current year and the date of birth
@@ -263,20 +264,56 @@ GUIÓ DEL INITIATION TO PROGRAMMING
                         year_current := readInteger();
                         year_birth := readInteger();
                         
-                        { the age is the difference between the two years }
+                        (* P: the current year and birthday has values ^ BIRTH <= CURRENT *)
+                        { year_current = CURRENT ^ year_birth = BIRTH  ^ BIRTH <= CURRENT }
                         age := year_current - year_birth;
+                        { Q: age = CURRENT - BIRTH  ^ BIRTH <= CURRENT }
                         
-                        { Print the age }
+                        { Print the age. }
                         writeInteger(age);   
 
-                        { Q: The age between the two years has been printed }
+                        { The age between the two years has been printed. }
                         
                     endalgorithm
+    
+        - Començarem per escriure la capçalera de algorithm, endalgorithm (+intro) i
+          la descripció del programa on s'inclou l'autor, la data i el que fa.
+          
+        - Com que haurem de calcular l'edat entre dues dades, el primer que haurem de fer és 
+          que algú ens les proporcioni. Qui? L'úsuari les escriurà pel teclat i les haurem de recollir.
+          Per fer-ho, les haurem de guardar en una variable entera. 
+          Per tant, necessitem year_current i year_birth per guardar-les.
+          
+        - Primer les declarem dins de la zona de variables. Creem aquesta zona (var -- endvar)
+          I escrivim dues variables enteres. 
+          La variable year_current del tipus integer.
+          La variable year_birth del tipus integer.
+          
+        - Un cop sabem on guardarem les dades, comencem amb l'algorisme.
+          Haurem de recollir els anys amb els readInteger() perquè les variables són enteres.
+          
+        - En aquest punt què sabem? que les variables han estat inicialitzades amb valors que no coneixem,
+          però que existeixen. Per ara ho indicarem així.
+          A més, indicarem que les dades són correctes i, per tant, el valor que ens han passat de BIRTH 
+          (ho posem així en majúscula) és inferior o igual a l'actual, CURRENT.
+          
+        - Sabem que tenim les dades inicialitzades, però ens falta calcular l'edat fent la simple resta   
+          d'anys.
+          Això ho guardarem a una variable age que haurem de declarar. 
+          Dins de la zona de variables var, declarem la variable age del tipus integer.
+          Com que assumim que l'entrada serà correcta i no ens generarà negatius, ens estalviem fer cap comprovació. 
+          És a dir, una precondició previa a executar-se que es respecta. 
+          Per tant, realitzem la resta i l'assignem a age.
+          
+        - Finalment, quan ja tenim l'edat, només ens cal emetre-la per pantalla amb un writeInteger.
+          Per formalitat, haurem d'escriure què ha passat: s'ha impres l'edat, que és una resta i 
+          que els valors han estat correctes.
+          
     
     * Calcula la taula de multiplicació: 
         Transpa:    Create the simple table of multiplication from a desired value.
         
-        Escriure:   algorithm currentAge
+        Escriure:   algorithm MultiplyTable
                     (* author: lsic@bloadcas.com
                        date: 2023-02-02
                        description:  Create the simple table of multiplication from a desired value.
@@ -286,9 +323,10 @@ GUIÓ DEL INITIATION TO PROGRAMMING
                             value : integer;
                         endvar
                     
-                        { get the value the input }
+                        { get the integer value the input }
                         value := readInteger();
                         
+                        (* value = VALUE *)
                         { write all the multiplications to the output }
                         writeInteger( 1 * value );
                         writeInteger( 2 * value );
@@ -301,15 +339,41 @@ GUIÓ DEL INITIATION TO PROGRAMMING
                         writeInteger( 9 * value );
                         writeInteger( 10 * value );
                         
-                        { Q: The table of multiplication for the value is printed }
+                        { Q: The table of multiplication for the VALUE is printed }
                         
                     endalgorithm
+                    
+        - Començarem per escriure la capçalera de algorithm, endalgorithm (+intro) i
+          la descripció del programa on s'inclou l'autor, la data i el que fa.
+          
+        - Com que haurem de calcular la taula de multiplicar d'un nombre enter, primer l'haurem
+          de demanar a l'usuari. Ho posarem a una variable value a la qual l'assignarem
+          el valor que es llegeixi de l'entrada per part de l'usuari. ReadInteger().
+          Com que value no ha estat declarada, l'haurem de declarar com a enter.
+          Creem l'espai de variables var-endvar i hi afegim la variable value del tipus enter.
+          Indiquem un comentari pel que aconseguim el valor enter de l'entrada.
+          
+        - Fins ara sabem que la variable value té un valor desconegut, però que existeix.
+          Ho indiquem. Però que caldrà fer ara? Mostrar la taula de multiplicar d'aquest valor.
+          Això significa que haurem de mostrar un rere l'altre (seqüencialment) la multiplicació
+          de 1 per value, 2 per value, 3 per value, així fins a el 10.
+          
+        - En aquest cas no ens cal cap variable temporal, ho podem mostrar directament fent la 
+          multiplicació.
+          writeInteger(1*value);
+          copiem i ho fem pels altres valors.
+          
+        - Finalment ja ho tenim. Formalment indiquem que hem fet. 
+          Hem imprés la taula de multiplicar d'un valor inicialitzat previament.
+          
+        
+    
     
     * Calcula la divisió entre dos nombres: 
         Transpa:    Calculate the division of two numbers. 
                     Assume they are non-zero positive numbers.
         
-        Escriure:   algorithm divisionOf2Numbers
+        Escriure:   algorithm DivisionOf2Numbers
                     (* author: lsic@bloadcas.com
                        date: 2023-02-02
                        description:  Calculate the division of two non-zero positive numbers. 
@@ -319,32 +383,56 @@ GUIÓ DEL INITIATION TO PROGRAMMING
                             x, y, division : real;
                         endvar
                     
-                        { get the value the input }
+                        { get the values from the input }
                         x := readReal();
                         y := readReal();
                         
-                        { P: x > 0 ^ y > 0 }
+                        { P: x = X ^ y = Y ^ x > 0 ^ y > 0 }
                         division := x / y;
-                        { Q: division = x / y ^ x > 0 ^ y > 0 ^ division > 0 }
+                        { Q: division = x / y ^ division > 0 }
                         
                         { Print the result }
-                        writeReal(division );
+                        writeReal(division);
                         
                     endalgorithm
     
-    * Calcula l'àrea d'una circumferència
-        Transpa:    Calculate the area of a pizza of radius z: A = Pi * z^2
-                    and the volume of the same pizza with hight a: V = A * a = Pi * z^2 * a
+        - Aquest exercici sembla complicat, però no té res de l'altre món. Per això, es troba dins de l'immersió simple.
         
-        Escriure:   algorithm currentAge
+        - Començarem per escriure la capçalera de algorithm, endalgorithm (+intro) i
+          la descripció del programa on s'inclou l'autor, la data i el que fa.
+          
+        - Com que haurem de calcular la divisió de dos nombres reals (en aquest cas no és enter),
+          els hautrem de demanar previament.
+          Ho indiquem amb un comentari i llegim de l'entrada amb el readReal tant l'x com l'y.
+          Com que no les hem declarat previament, haurem de crear la zona de variables var--endvar
+          i afegirem les dues variables, x i y, del tipus real.
+          
+        - En aquest punt què sabem? Que X i Y tenen un valor. Ho representarem així. 
+          x = X (MAJUSCULA) i y = Y (MAJÚSCULA). I, a més, des de l'enunciat ens diuen que seran més grans que zero.
+          And x > 0 i y > 0.
+          
+        - Ara cal fer l'acció del programa, la divisió. 
+          Usarem una variable division i li assignarem el resultat de l'operació x entre y (real).
+          Com que no l'hem declarat previament, afegim division com a variable del tipus real.
+          Per tant, un cop haguem fet la divisio, division será un valor positiu no-zero i contindrà el resultat d'aquesta operació.
+          
+        - Finalment, haurem de mostrar per pantalla el resultat que conté la variable division.
+          
+        
+    
+    * Calcula el volum d'una circumferència
+        Transpa:    Calculate the volume of the pizza. 
+                    Former, calculate the area of the pizza of radius Z:  A = Pi * z^2
+                    Latterly, calculate the volume of this pizza times h: V = A * a = Pi * z^2 * a
+        
+        Escriure:   algorithm PizzaVolume
                     (* author: lsic@bloadcas.com
                        date: 2023-02-02
-                       description:  Calculate the area of a circle (pizza) or radius z and 
-                                     the volume of a cilindre with a height.
+                       description:  Calculate the volume of the pizza or radius z and high a.
                     *)
-                    const 
-                        PI : real = 3.14159265359;
-                    endconst
+                        const 
+                            PI : real = 3.14159265359;
+                        endconst
                         var 
                             a, z, area, volume : real;
                         endvar
@@ -353,16 +441,37 @@ GUIÓ DEL INITIATION TO PROGRAMMING
                         a := readReal();
                         z := readReal();
                         
-                        { Calculate the area with the found parameters}
+                        { P: a = A ^ z = Z }
                         area := PI * z * z;
-                        writeReal(area);
                         volume := area * a;  (* the same as:  volume := Pi * z * z * a *)
+                        { Q: area = Pi * z * z ^ volume = area * a }
+                        
                         writeReal(volume);
-                        { Q: area = PI*z*z*a ^  volume = area * a = PI*z*z*a }
+                        { The volume of the pizza has been printed. }
                         
                     endalgorithm
     
-    
+        - En aquest exercici realitzarem càlculs matemàtics simples.
+        
+        - Començarem per escriure la capçalera de algorithm, endalgorithm (+intro) i
+          la descripció del programa on s'inclou l'autor, la data i el que fa.
+          
+        - Primerament haurem de recollir els dos valors de l'entrada: el radi, z, i l'alçada, a.
+          Com que són dos reals, ho farem amb un readReal.
+          Les assignarem a les variables, a i z. 
+          Com que no les hem declarat previament, haurem de crear la zona de variables var--endvar
+          i afegirem les dues variables, a i z, del tipus real.
+          
+        - En aquest punt què sabem? Que a i z tenen un valor. Ho representarem així. 
+          Ara, haurem de fer les multiplicacions per calcular el volum.
+          Primer assignarem a area el valor de PI per z al quadrat qué és el mateix que multiplicar dos cops per z.
+          Com que PI és una constant i no variarà, l'haurem de declarar com a tal.
+          Creem la zona de constants const -- endconst i afegim la constant PI com a real amb el valor 3.14159265359;
+          Un cop tenim l'area, caldrà trobar el volum. Assignem volum com el producte de l'area per l'alçada de la pizza, a.
+          I ja tenim els càlculs fets, però com que usem dues variables que no hem declarat, ho haurem de fer.
+          En la zona var--endvar, afegim les variables area i volume del tipus real.
+          
+        - Finalment, haurem de mostrar per pantalla el resultat que conté la variable volume amb writeReal.
     
     
     

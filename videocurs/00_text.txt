@@ -73,18 +73,20 @@ GUIÓ DEL INITIATION TO PROGRAMMING
     En informàtica, molts dels processos i conceptes que explicarem més endavant simbolitzen la transformació d'unes entrades en unes sortides.
     I aquest transformació s'aplica a qualssevol idea. Per exemple:
     
-    Transpa:    data + algorithm -> [ execute algorithm ] -> calculations
+    Transpa:    pseudocode -> [ implementation ] -> code in C (programming language)
+                data + algorithm -> [ execute algorithm ] -> calculations
                 keys + door -> [ unlock door   ] -> opened door.
                 ingredients + receipe  -> [ cook ingredients ] -> menu
                 signals -> [ electronic board ] -> control lights
                 
+    * La implementació d'un pseudocodi d'un algorisme el transforma en un codi d'un determinat llenguatge (c)
     * L'execució d'un programa el qual rep unes dades i n'obtenim uns càlculs.
     * El procès d'obrir una porta permet que unes claus inserides en una determinada porta, la pugui obrir.
     * El procès de cuinar permet processar uns ingredients usant una recepta, per crear un menú.
     * L'execució d'un component electrònic transforma les senyals d'entrada per controlar les llums d'un semàfor.
     
     Hem que retenir aquesta idea de processament d'unes dades d'entrada per transformar-les en unes altres de sortida.
-    Serà un concepte que repetirem molts cops.
+    Serà un concepte que repetirem molts cops. De fet, ja ha sortit en pantalles anteriors.
     
 5.- IMMERSIONS
 
