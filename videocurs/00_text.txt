@@ -6,10 +6,16 @@ GUIÓ DEL INITIATION TO PROGRAMMING
     Transpa:    Diagrama d'immersions simplificat
     
     Benvinguts en aquest curs d'iniciació a la programació on aprendrem les bases teòriques de la programació de manera gradual.
-    De fet, el curs està dividit diferents immersions tal com es faria en el cas de voler aprendre a nedar.
-    Se n'ha pensat unes 6 immersions: simple, bàsica, procedimental, arrays, punters i ADT (TADs). 
-    A més, un cop s'explica el contingut d'una base, ja es disposarà del coneixement per les complementàries o satèl·lit.
-    Però això ho explicarem més endavant.
+    De fet, el curs està dividit diferents immersions tal com si fos un curs d'aprendre a nedar. Cada immersió serà a major profunditat en la programació i,
+	per tant, el contingut serà cada cop més complex.
+    Se n'ha pensat unes 6 immersions que correspondran a cada capítol d'aquest curs.
+		la simple, bàsica, procedimental, arrays, punters i la de tipus de dades. 
+    A més, un cop s'explica el contingut d'una base, ja es disposarà del coneixement suficient per dur a terme les més avançades:
+		En les que inclourem l'especificació d'algorismes, 
+		el disseny descendent de codi
+		la recursivitat
+		el càlcul de costos assimptòtics.
+    Però això ho explicarem més endavant i en més detall en cada capítol.
     
 2.- DEFINITION
     Transpa:    Def(Programming) := noun, the process or activity of writing computer programs.
@@ -21,7 +27,7 @@ GUIÓ DEL INITIATION TO PROGRAMMING
     Per això, prefereixo una de millor: és l'art de dir a una màquina el què ha de fer i com ho ha de fer en el seu llenguatge.
     És a dir, la nostra missió és explicar en un llenguatge concret quines accions s'han de dur a terme
     ... per tal que una màquina les entengui i les sàpiga fer.
-    Per això aquest tipus de programació s'anomena programació imperativa, perquè es donen ordres.
+    Per això aquest tipus de programació s'anomena programació imperativa, perquè es donen ordres a les màquines perquè actuin per donar resposta a un problema.
     
 3.- MODEL COMPUTACIONAL
 
@@ -33,10 +39,12 @@ GUIÓ DEL INITIATION TO PROGRAMMING
     Si hem de programar per a una màquina ens trobem que hi ha una infinitat de llenguatges: C, C++, C#, Java, Python, JavaScript, PHP, Swift, Go, Ruby,...
     Per això, en aquest curs no usarem cap d'ells i ens centrarem en la part més teoria de la programació: l'algorismica.
     L'algorismica és la branca de la informàtica que estudia els algorismes, ...
-    ... que són una descripció en forma d'instruccions precises i sense ambigüitat a seguir per resoldre un problema en un temps finit.
+    ... que són una descripció en forma d'instruccions precises que cal seguir per resoldre un problema en un curt temps.
     Per fer-ho, usarem el pseudcodi, un llenguatge abstracte el qual no és cap dels anteriorment descrits. 
-    Per tant, no s'executaran sobre un ordinador, sino que ho farem sobre un model de computació. 
+    Per tant, no s'executaran sobre un ordinador, sino que ho farem sobre un model de computació, és a dir en una màquina imaginaria de potència il·limitada.
     El que correspondria a la idea perfecta de computadora, el millor model abstracte.
+	
+	La idea final que ens ha de quedar clar és que escriurem algorismes en un pseudocodi per a una màquina genèrica. Per tant, aquest pseudoci el traduim a un llenguatge de programació, m'obtindrem un programa que podrà ser executar en determinades computadores.
     
     Transpa:    [MEMORY] <-> [CPU] <-> [INOUT] --> SCREEN
                                                <-- KEYBOARD.
