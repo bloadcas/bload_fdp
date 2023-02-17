@@ -15,24 +15,28 @@ GUIÓ DEL INITIATION TO PROGRAMMING
 2.- ESTRUCTURA BÀSICA D'UN ALGORISME.
     
     Transpa:        algorithm <NAME>
-                    (* author: <author>
-                       date: <yyyy-mm-dd>
-                       description: <brief description>
+                    (* author : <author>
+                       date : <yyyy-mm-dd>
+                       description : <brief description>
                     *)
-                    types
-                        <types>         { type of data which are going to be used as a variables }
-                    endtypes
+                        const
+                            <const>
+                        endconst 
+                    
+                        type
+                            <types>     { type of data which are going to be used as a variables }
+                        endtype
                     
                         var 
                             <vars>      { variables to be used inside de code }
-                        endvars
+                        endvar
                     
                         { comments }
                         <code>
-                        
-                        /* C comments style */
+                       
                     
                     endalgorithm
+                    
     
     Per començar el nostre algorisme s'expresa dins d'una estructura que ens facilitarà la seva expressió formal. 
     També se solen representar com a procediments en format acció o funció tal com ho veurem més endavant.
